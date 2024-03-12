@@ -36,12 +36,12 @@ Route::get('/subcategory-product/{id}', [HomeController::class, 'subcategory'])-
 Route::get('/product-detail/{id}', [HomeController::class, 'detail'])->name('detail');
 
 Route::get('/search', [HomeController::class, 'search'])->name('products.search');
-Route::get('/products/sort', [HomeController::class, 'sort'])->name('products.sort');
-
-
+Route::get('/price-search', [HomeController::class, 'priceRange'])->name('price.search');
 Route::get('/allProducts', [HomeController::class, 'allProducts'])->name('allProducts');
 
+Route::post('/contact/send', [HomeController::class, 'sendMessage'])->name('contact.send');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
 Route::get('/aboutUs', [HomeController::class, 'aboutUs'])->name('about');
 Route::post('/add-to-cart/{id}', [CartController::class, 'index'])->name('add-to-cart');
 Route::get('/show-cart', [CartController::class, 'show'])->name('show-cart');

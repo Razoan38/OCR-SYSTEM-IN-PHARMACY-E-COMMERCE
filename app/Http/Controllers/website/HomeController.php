@@ -10,6 +10,10 @@ use App\Http\Controllers\BrandController;
 use App\Models\Brand;
 use App\Models\Ocr;
 use App\Models\SubCategory;
+use Darryldecode\Cart\Cart;
+ use Illuminate\Support\Facades\Mail;
+ use App\Mail\ContactFormMail;
+ use App\Mail\ContactFormSubmission;
 
 class HomeController extends Controller
 {
@@ -80,15 +84,26 @@ class HomeController extends Controller
        return view('website.category.category',compact('products','categories','subCategories','brands'));
     }
 
-    public function sort(Request $request)
+
+    public function sendMessage(Request $request)
     {
-        $sortBy = $request->input('sort_by');
-    
-        // Add your sorting logic here based on the selected option
-        // Example: Let's assume your Product model has a column 'popularity'
-        $sortedProducts = Product::orderBy($sortBy, 'asc')->get();
-    
-        return response()->json($sortedProducts);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'message' => 'required|string',
+        ]);
+
+        $data = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'message' => $request->input('message'),
+        ];
+
+        Mail::to('razoan38@gmail.com')->send(new ContactFormMail($data['name'], $data['email'], $data['message']));
+
+        return redirect()->back()->with('success', 'Message sent successfully!');
     }
     
+    
+
 }

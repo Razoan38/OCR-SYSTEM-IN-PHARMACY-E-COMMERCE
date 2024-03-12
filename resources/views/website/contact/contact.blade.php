@@ -13,7 +13,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card card-body  h-100 shadow">
+                    {{-- <div class="card card-body  h-100 shadow">
                         <h1 class="text-center">Send Us a Message!</h1>
                         <hr>
                         <form action="" method="POST">
@@ -40,6 +40,51 @@
                                 <label for="" class="col-md-3"></label>
                                 <div class="col-md-9">
                                     <input type="submit" class="btn btn-outline-info px-5 fw-bold"  value="Send">
+                                </div>
+                            </div>
+                        </form>
+                    </div> --}}
+                    <div class="card card-body h-100 shadow">
+                        <h1 class="text-center">Send Us a Message!</h1>
+                        <hr>
+                        @if (session('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        <form action="{{ route('contact.send') }}" method="POST">
+                            @csrf
+                            <div class="row mb-3">
+                                <label for="" class="col-md-3">Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-3">Email Address</label>
+                                <div class="col-md-9">
+                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-3">Message</label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" name="message">{{ old('message') }}</textarea>
+                                    @error('message')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="btn btn-outline-info px-5 fw-bold">Send</button>
                                 </div>
                             </div>
                         </form>

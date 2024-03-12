@@ -1,10 +1,5 @@
 @extends('website.master')
 
-@section('style')
-    <head>
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-    </head>
-@endsection
 
 @section('body')
     <div class="breadcrumbs">
@@ -33,7 +28,7 @@
                 <div class="col-lg-3 col-12">
 
                     <div class="product-sidebar">
-{{-- 
+                   {{-- 
                         <div class="single-widget search">
                             <h3>Search Product</h3>
                             <form action="{{url('/search') }}" method="GET" name="category" value="all">
@@ -66,14 +61,26 @@
                         </div> 
 
 
-                        <div class="single-widget range">
+                        {{-- <div class="single-widget range">
                             <h3>Price Range</h3>
-                            <input type="range" class="form-range" name="range" step="1" min="100" max="10000" value="10" oninput="updateRangeValue(this.value)">
+                            <div class="mul">
+
+                            </div>
+                            <input type="range"id="input_left" class="form-range range" name="range" step="1" min="0" max="10000" value="10" oninput="updateRangeValue(this.value)">
                             <div class="range-inner">
                                 <label>$</label>
                                 <input type="text" id="rangePrimary" placeholder="100" />
                             </div>
-                        </div>
+                        </div> --}}
+
+                        {{-- <div class="single-widget range">
+                            <h3>Price Range</h3>
+                            <input type="range" class="form-range range" name="range" step="1" min="100" max="10000" value="10" oninput="updateRangeValue(this.value)">
+                            <div class="range-inner">
+                                <label>$</label>
+                                <input type="text" id="rangePrimary" placeholder="100" />
+                            </div>
+                        </div> --}}
                         
 
 
@@ -255,6 +262,13 @@
             </div>
         </div>
     </section>
+    <script>
 
+        $(document).ready(function(e){
+            $('.range').on('change',function(){
+                alert();
+            });
+        })
+    </script>
 
 @endsection

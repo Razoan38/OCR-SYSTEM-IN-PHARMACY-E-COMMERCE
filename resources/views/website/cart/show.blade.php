@@ -110,7 +110,7 @@
                                             <span>{{number_format($tax)}}</span>
                                         </li>
                                         <li>Shipping (TK.)
-                                            @php($shipping=500)
+                                            @php($shipping=50)
                                             <span>{{$shipping}}</span></li>
                                         <li class="last">Total Payable (TK.)
                                             @php($grandTotal = $sum + $tax + $shipping)
