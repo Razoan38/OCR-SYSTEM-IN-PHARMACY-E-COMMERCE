@@ -52,14 +52,14 @@
                         </div> 
 
 
-                        <div class="single-widget range">
+                        {{-- <div class="single-widget range">
                             <h3>Price Range</h3>
                             <input type="range" class="form-range" name="range" step="1" min="100" max="10000" value="10" oninput="updateRangeValue(this.value)">
                             <div class="range-inner">
                                 <label>$</label>
                                 <input type="text" id="rangePrimary" placeholder="100" />
                             </div>
-                        </div>
+                        </div> --}}
                         
                         <div class="single-widget">
                             <h3>All Brand</h3>
@@ -127,6 +127,10 @@
                                                 </ul>
                                                 <div class="price">
                                                     <span>TK. {{$product->selling_price}}</span>
+                                                    
+                                                    
+                                                            {{-- <button class="btn addToWishlist"><i class="lni lni-heart "></i> To Wishlist</button> --}}
+                                                      
                                                 </div>
                                             </div>
                                         </div>

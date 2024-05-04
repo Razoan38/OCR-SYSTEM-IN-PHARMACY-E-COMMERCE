@@ -17,12 +17,12 @@ Image Upload and OCR Results
 
 <div class="" id="body">
     @if(isset($imagePath))
-    <h3 class="" style="width: 30%; margin-top: 10px ; margin-left: 244px; color: green">Image Uploaded:</h3>
-    <img src="{{ asset($imagePath) }}" alt="Uploaded Image"  style="margin-left: 30%; margin-top: 40px">
+    <h3 class="" style="width: 30%; margin-top: 10px ; margin-left: 292px; color: green">Image Uploaded:</h3>
+    <img src="{{ asset($imagePath) }}" alt="Uploaded Image"  style="margin-left: 19%; margin-top: 45px; max-width: 60% ">
 
     @if(isset($text))
         <br>
-        <h3 style="margin-top: 60px ; margin-bottom: 50px; margin-left: 244px; color: yellowgreen ">OCR after reading:</h3>
+        <h3 style="margin-top: 60px ; margin-bottom: 50px; margin-left: 244px; color: yellowgreen ">OCR after reading result: </h3>
         <pre style="margin-left: 30%;">{{ $text }}</pre>
     @endif
 @endif

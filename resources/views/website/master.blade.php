@@ -176,11 +176,13 @@
                         </div>
                         <div class="navbar-cart">
                             {{-- <div class="wishlist">
-                                <a href="javascript:void(0)">
+                                <a href="{{route('wishlist')}}">
                                     <i class="lni lni-heart"></i>
                                     <span class="total-items">0</span>
+                                   
                                 </a>
                             </div> --}}
+
                             <div class="cart-items">
                                 <a href="javascript:void(0)" class="main-btn">
                                     <i class="lni lni-cart"></i>
@@ -352,6 +354,43 @@
         </div>
     </div>
 
+    {{-- <style>
+        .whatsapp_flort {
+          position: fixed ;
+          bottom: 65px;
+          right: 20px;
+        }
+       </style>
+    
+       <div class="whatsapp_flort">
+            <a href="https://wa.me/8801787801452" target="_blank"><img  src="{{ asset('/') }}images/whatsapp.png" width="70px" 
+              class="whatsapp_flort_btn"/>
+    
+            </a>
+       </div> --}}
+
+
+       <style>
+
+        .whatsapp_flort {
+            position: fixed;
+            bottom: 65px;
+            right: 20px;
+            z-index: 9999; /* Ensure it appears on top of other content */
+        }
+
+        .whatsapp_flort_btn {
+            width: 70px;
+            /* Add any additional styling for the button image */
+        }
+       </style>
+
+<div class="whatsapp_flort" style="text-align: center">
+    <a href="https://wa.me/+8801877997100?text=Welcome-to-Moon-Pharma-Business" target="_blank" title="Razoan" >
+        <img src="{{ asset('/') }}images/whatsapp.png" alt="WhatsApp Button" class="whatsapp_flort_btn">
+     
+    </a>
+</div>
 </header>
 
 

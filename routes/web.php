@@ -16,7 +16,7 @@ use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\ImageController;
  use App\Http\Controllers\website\ProductController as ProductFront;
-
+use App\Http\Controllers\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +62,15 @@ Route::get('/customer-dashboard', [CustomerDashboardController::class, 'index'])
 Route::get('/customer-manage', [CustomerDashboardController::class, 'manage'])->name('customer-manage');
 Route::get('/image', [ImageController::class, 'index'])->name('image');
 Route::post('/image', [ImageController::class, 'upload'])->name('upload');
+
+
+//Wishlist
+Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
+Route::post('/add-to-wishlist', [WishlistController::class, 'add']);
+
+
+
+
 // Route::post('/upload-image', [ImageController::class, 'uploadImage'])->name('upload.image');
 
 // Route::post('{categories}', [ProductFront::class, 'getCategory'])->name('category');

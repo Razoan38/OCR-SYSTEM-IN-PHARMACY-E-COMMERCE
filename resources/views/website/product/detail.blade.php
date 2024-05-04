@@ -63,7 +63,7 @@
                             <form action="{{route('add-to-cart', ['id' => $product])}}" method="POST">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-12">
+                                    {{-- <div class="col-lg-4 col-md-4 col-12">
                                         <div class="form-group color-option">
                                             <label class="title-label" for="size">Choose color</label>
                                             <div class="single-checkbox checkbox-style-1">
@@ -83,7 +83,7 @@
                                                 <label for="checkbox-4"><span></span></label>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-lg-8 col-md-8 col-12">
                                         <div class="form-group quantity">
                                             <label for="color">Quantity</label>
@@ -98,16 +98,12 @@
                                             <button type="submit" class="btn" style="width: 100%;">Add to Cart</button>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-4 col-12">
+                                    {{-- <div class="col-lg-4 col-md-4 col-12">
                                         <div class="wish-button">
                                             <button class="btn"><i class="lni lni-reload"></i> Compare</button>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-12">
-                                        <div class="wish-button">
-                                            <button class="btn"><i class="lni lni-heart"></i> To Wishlist</button>
-                                        </div>
-                                    </div>
+                                    </div> --}}
+                                    
                                 </div>
                             </div>
                             </form>
@@ -130,3 +126,4 @@
         </div>
     </section>
 @endsection
+
